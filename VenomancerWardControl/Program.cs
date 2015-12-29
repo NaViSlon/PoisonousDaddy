@@ -38,8 +38,7 @@ namespace Poisonous_Daddy
             var wards = ObjectMgr.GetEntities<Unit>().Where(unit => unit.ClassID == ClassID.CDOTA_BaseNPC_Venomancer_PlagueWard && unit.IsAlive && unit.CanAttack()).ToList();
             var notarget = ObjectMgr.GetEntities<Creep>().Where(creep => (creep.ClassID == ClassID.CDOTA_BaseNPC_Creep_Lane || creep.ClassID == ClassID.CDOTA_BaseNPC_Creep_Siege) && creep.IsAlive && creep.IsVisible && creep.IsSpawned && creep.Health > ((int)PlagueWardDamage[Level] * (1 - creep.DamageResist) + 30)).ToList();
 
-            if (!enemies.Any() || !creeps.Any() || !wards.Any() || !(Level > 0))
-                return;
+            
         #endregion
 
         #region enemy
